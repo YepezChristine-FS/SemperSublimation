@@ -5,7 +5,7 @@ import "./index.css";
 function App() {
   const gallery = Array.from({ length: 12 }, (_, i) => ({
     title: `Custom Jersey ${i + 1}`,
-    img: `/images/${i + 1}.JPG`, // from /public/images/
+    img: `/images/${i + 1}.JPG`,
   }));
 
   const testimonials = [
@@ -26,30 +26,25 @@ function App() {
   return (
     <div className="font-sans bg-gradient-to-br from-yellow-50 via-pink-50 to-blue-50 min-h-screen">
       {/* HERO SECTION */}
-      <header className="bg-gradient-to-r from-red-600 via-yellow-400 to-blue-500 text-white rounded-b-3xl shadow-lg p-6">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between">
-          <img
-            src="/images/logo-cropped.jpg"
-            alt="Semper Sublimation Logo"
-            className="h-20 w-20 rounded-full border-4 border-white shadow"
-          />
-          <div className="text-center sm:text-left mt-4 sm:mt-0">
-            <h1 className="text-4xl font-extrabold">Semper Sublimation</h1>
-            <p className="text-sm">
-              Custom Jerseys, Shirts & Apparel — Veteran Owned
-            </p>
-            <a
-              href="#contact"
-              className="inline-block mt-3 bg-white text-red-600 px-4 py-2 rounded-full shadow hover:bg-yellow-100 transition"
-            >
-              Get a Quote
-            </a>
-          </div>
+      <header className="bg-gradient-to-r from-red-600 via-yellow-400 to-blue-500 text-white shadow-lg">
+        <div className="max-w-4xl mx-auto text-center p-10">
+          <h1 className="text-5xl font-extrabold drop-shadow-lg">
+            Semper Sublimation
+          </h1>
+          <p className="text-lg mt-3">
+            Custom Jerseys, Shirts & Apparel — Veteran Owned
+          </p>
+          <a
+            href="#contact"
+            className="inline-block mt-5 bg-white text-red-600 px-6 py-2 rounded-full shadow hover:bg-yellow-100 transition"
+          >
+            Get a Quote
+          </a>
         </div>
       </header>
 
       {/* ABOUT */}
-      <section className="max-w-4xl mx-auto p-6 text-center my-10">
+      <section className="max-w-4xl mx-auto text-center p-6 my-10">
         <h2 className="text-3xl font-bold text-pink-600 mb-4">About Us</h2>
         <p className="text-gray-700">
           We craft top-quality custom sports jerseys, shirts, and apparel. As a
@@ -64,9 +59,9 @@ function App() {
           Product Gallery
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {gallery.map((item, index) => (
+          {gallery.map((item, idx) => (
             <div
-              key={index}
+              key={idx}
               className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
             >
               <img
@@ -103,7 +98,7 @@ function App() {
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* CONTACT FORM */}
       <section
         id="contact"
         className="max-w-3xl mx-auto p-6 bg-white bg-opacity-90 rounded-xl shadow-lg my-10"
@@ -147,7 +142,7 @@ function App() {
       </section>
 
       {/* FOOTER */}
-      <footer className="mt-10 text-center text-gray-500 text-xs p-6">
+      <footer className="text-center text-gray-500 text-xs p-6">
         <div className="flex justify-center items-center space-x-2 mb-2">
           <Instagram className="w-5 h-5 text-pink-500" />
           <a
