@@ -24,54 +24,58 @@ function App() {
   ];
 
   return (
-    <div className="font-sans bg-gradient-to-br from-yellow-50 via-pink-50 to-blue-50 min-h-screen">
+    <div className="font-sans bg-gradient-to-br from-yellow-50 via-pink-50 to-blue-50 min-h-screen scroll-smooth">
       {/* HERO SECTION */}
-      <header className="bg-gradient-to-r from-red-600 via-yellow-400 to-blue-500 text-white shadow-lg">
-        <div className="max-w-4xl mx-auto text-center p-10">
-          <h1 className="text-5xl font-extrabold drop-shadow-lg">
+      <header className="bg-gradient-to-r from-red-600 via-yellow-400 to-blue-500 text-white py-10 shadow-lg">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-5xl font-extrabold drop-shadow-lg">
             Semper Sublimation
           </h1>
-          <p className="text-lg mt-3">
+          <p className="mt-2 text-lg sm:text-xl">
             Custom Jerseys, Shirts & Apparel — Veteran Owned
           </p>
           <a
             href="#contact"
-            className="inline-block mt-5 bg-white text-red-600 px-6 py-2 rounded-full shadow hover:bg-yellow-100 transition"
+            className="inline-block mt-4 bg-white text-red-600 font-semibold px-6 py-2 rounded-full hover:bg-yellow-100 transition"
           >
             Get a Quote
           </a>
         </div>
       </header>
 
-      {/* ABOUT */}
-      <section className="max-w-4xl mx-auto text-center p-6 my-10">
+      <div className="bg-red-500 text-white p-4">TAILWIND IS WORKING</div>
+
+      {/* ABOUT SECTION */}
+      <section className="max-w-4xl mx-auto text-center p-8">
         <h2 className="text-3xl font-bold text-pink-600 mb-4">About Us</h2>
-        <p className="text-gray-700">
+        <p className="text-gray-700 leading-relaxed">
           We craft top-quality custom sports jerseys, shirts, and apparel. As a
           veteran-owned business, we help teams and organizations stand out with
           style and pride.
         </p>
       </section>
 
-      {/* GALLERY */}
+      {/* PRODUCT GALLERY */}
       <section className="max-w-6xl mx-auto p-6">
         <h2 className="text-3xl font-bold text-pink-600 mb-6 text-center">
           Product Gallery
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {gallery.map((item, idx) => (
+          {gallery.map((item, index) => (
             <div
-              key={idx}
-              className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
+              key={index}
+              className="bg-white rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition overflow-hidden"
             >
-              <img
-                src={item.img}
-                alt={item.title}
-                className="object-cover w-full aspect-square"
-                loading="lazy"
-              />
+              <div className="aspect-square w-full">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="object-cover w-full h-full"
+                  loading="lazy"
+                />
+              </div>
               <div className="p-2 text-center">
-                <h3 className="text-sm font-medium text-gray-700">
+                <h3 className="text-sm font-medium text-gray-700 truncate">
                   {item.title}
                 </h3>
               </div>
@@ -85,11 +89,11 @@ function App() {
         <h2 className="text-3xl font-bold text-center text-red-500 mb-6">
           What Our Customers Say
         </h2>
-        <div className="max-w-5xl mx-auto grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="max-w-5xl mx-auto grid gap-6 sm:grid-cols-2 md:grid-cols-3 px-4">
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl shadow p-4 text-center hover:shadow-md"
+              className="bg-white rounded-xl shadow p-4 text-center hover:shadow-lg transition"
             >
               <p className="text-sm text-gray-600 italic">“{t.quote}”</p>
               <p className="mt-2 font-semibold text-gray-800">— {t.name}</p>
@@ -142,7 +146,7 @@ function App() {
       </section>
 
       {/* FOOTER */}
-      <footer className="text-center text-gray-500 text-xs p-6">
+      <footer className="mt-10 text-center text-gray-500 text-xs p-6">
         <div className="flex justify-center items-center space-x-2 mb-2">
           <Instagram className="w-5 h-5 text-pink-500" />
           <a
